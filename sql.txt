@@ -1,0 +1,19 @@
+CREATE TABLE `user` (
+  `user_id` smallint unsigned NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(45) NOT NULL,
+  `last_name` varchar(45) NOT NULL,
+  `dob` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `email_id` varchar(45) NOT NULL,
+  `mobile_number` varchar(45) NOT NULL,
+  `country` varchar(45) NOT NULL,
+  `state` varchar(45) NOT NULL,
+  `city` varchar(45) NOT NULL,
+  `postal_code` varchar(45) NOT NULL,
+  `address` varchar(45) NOT NULL,
+  PRIMARY KEY (`user_id`),
+  KEY `idx_user_last_name` (`last_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+ALTER TABLE user
+DROP COLUMN dob;
